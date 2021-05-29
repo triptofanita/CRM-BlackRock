@@ -8,6 +8,17 @@ import { LoginComponent } from './components/login/login.component';
 import { ProductsComponent } from './components/products/products.component';
 import { CustomersComponent } from './components/customers/customers.component';
 import { HomeComponent } from './components/home/home.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { MenuComponent } from './shared/menu/menu.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { TableComponent } from './shared/table/table.component';
+
 
 @NgModule({
   declarations: [
@@ -15,12 +26,23 @@ import { HomeComponent } from './components/home/home.component';
     LoginComponent,
     ProductsComponent,
     CustomersComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent,
+    MenuComponent,
+    MainNavComponent,
+    TableComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

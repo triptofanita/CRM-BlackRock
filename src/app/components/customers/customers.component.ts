@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TableComponent} from '../../shared/table/table.component'
 
 @Component({
   selector: 'app-customers',
