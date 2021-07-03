@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "public/crm-blackrock",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
