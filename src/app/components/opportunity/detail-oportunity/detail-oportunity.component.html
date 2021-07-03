@@ -1,0 +1,136 @@
+<div class="containerDetail">
+  <h1 class="title">Detalle de oportunidad</h1>
+
+  <div *ngFor="let opportunity of OpportunityData">
+
+    <div class="dataCustomer-Product">
+    
+      <p *ngFor="let customer of CustomersData">
+        <span *ngIf="customer.id === opportunity.id_customer">
+          <b>Cliente:</b>
+          {{customer.name}}
+        </span>
+      </p>
+  
+      <p *ngFor="let product of ProductsData">
+        <span *ngIf="product.id === opportunity.id_product">
+          <b>Producto:</b>
+          {{product.name}}
+        </span>
+      </p>
+  
+    </div>
+
+    <div *ngFor="let element of elementData" class="typeData">
+      <p>
+        <b>Etapa:</b>
+        <span>{{element.etapa}}</span>
+      </p>
+
+      <p>
+        <b>Prioridad:</b>
+        <span>{{element.prioridad}}</span>
+      </p>
+
+      <p *ngFor="let promotor of PromotersData">
+        <span *ngIf="promotor.id === opportunity.id_promoter">
+          <b>Representante de ventas:</b>
+          {{promotor.name}}
+        </span>
+      </p>
+
+    </div>
+
+    <div class="dates">
+      <p>
+        <b>Último contacto:</b>
+        <br>
+        26-03-21
+      </p>
+
+      <p>
+        <b>Próximo contacto:</b>
+        <br>
+        22-06-21
+      </p>
+    </div>
+
+    <div class="coments">
+      <p>Comentario</p>
+      <textarea name="coment" id="" cols="30" rows="10"></textarea>
+      <button mat-button class="buttonCard"><mat-icon class="mat-18">bookmark</mat-icon>Guardar</button>
+    </div>
+
+    <div class="record">
+      <h3>Historial de oportunidad</h3>
+      <mat-divider></mat-divider>
+      <table class="storieTable">
+        
+        <tr>
+          <th>Representante</th>
+          <th>Observaciones</th>
+          <th>Status</th>
+        </tr>
+
+        <tr>
+          <td>Juan Salgado</td>
+          <td>Creó la oportunidad</td>
+          <td>Abierta</td>
+        </tr>
+
+        <tr>
+          <td>Talía González</td>
+          <td>Se acordó próxima llamada</td>
+          <td>Abierta</td>
+        </tr>
+        <tr>
+          <td>Talía González</td>
+          <td>asistió a una reunión con el cliente</td>
+          <td>Abierta</td>
+        </tr>
+
+        <tr>
+          <td>Juan Salgado</td>
+          <td>Acordó un número de títulos</td>
+          <td>Abierta</td>
+        </tr>
+
+        <tr>
+          <td>María Hernández </td>
+          <td>Cerró la oportunidad</td>
+          <td>Cerrada</td>
+        </tr>
+
+      </table>
+
+    </div>
+    
+
+  </div>
+
+  
+</div>
+<!-- 
+<div *ngFor="let opportunity of OpportunityData">
+    <label *ngFor="let customer of CustomersData">
+        <h2 *ngIf="customer.id === opportunity.id_customer">Cliente: {{customer.name}}</h2>
+    </label>
+    <label *ngFor="let product of ProductsData">
+        <h2 *ngIf="product.id === opportunity.id_product">Producto: {{product.name}}</h2>
+    </label>
+    <label *ngFor="let promotor of PromotersData">
+        <h2 *ngIf="promotor.id === opportunity.id_promoter">Nombre Promotor: {{promotor.name}}</h2>
+        <h2 *ngIf="promotor.id === opportunity.id_promoter">Status: {{promotor.phone}}</h2>
+    </label>
+</div>
+<div *ngFor="let opportunity of OpportunityData">
+    <h2>Precio: {{opportunity.price}}</h2>
+    <h2>Status: {{opportunity.status}}</h2>
+</div>
+<div *ngFor="let element of elementData">
+    <h2>{{element.etapa}}</h2>
+    <h2>{{element.prioridad}}</h2>
+    <h2>{{element.proxima_actividad}}</h2>
+    <h2>{{element.ultimo_contacto}}</h2>
+</div>
+ -->

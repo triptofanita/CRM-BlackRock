@@ -3,20 +3,28 @@ import { RouterModule, Routes } from '@angular/router';
 import { CustomersComponent } from './components/customers/customers.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { DetailOportunityComponent } from './components/opportunity/detail-oportunity/detail-oportunity.component';
 import { OpportunityComponent } from './components/opportunity/opportunity.component';
 import { ProductsComponent } from './components/products/products.component';
 import { PromotersComponent } from './components/promoters/promoters.component';
 import { ReportComponent } from './components/report/report.component';
 import { AuthGuard } from './guards/auth.guard';
+import { ContainerAppComponent } from './components/pages/container-app/container-app.component';
 
 const routes: Routes = [
-	{ path: "login", component: LoginComponent, pathMatch: "full"},
-	{path:"home", component:HomeComponent, canActivate:[AuthGuard]},
+	{
+		path: '', component: ContainerAppComponent,
+		children: [
+			{path:"home", component:HomeComponent, canActivate:[AuthGuard]},
 	{path:"customers", component:CustomersComponent, canActivate:[AuthGuard]},
 	{path:"products", component:ProductsComponent, canActivate:[AuthGuard]},
 	{path:"opportunity", component:OpportunityComponent, canActivate:[AuthGuard]},
 	{path:"promoters", component:PromotersComponent, canActivate:[AuthGuard]},
-	{path:"reports", component:ReportComponent, canActivate:[AuthGuard]},
+	{path:"detailopportunity/:id", component:DetailOportunityComponent, canActivate:[AuthGuard]},
+      {path:"reports", component:ReportComponent, canActivate:[AuthGuard]},
+		]
+	},
+	{ path: "login", component: LoginComponent, pathMatch: "full"},
 ];
 
 // pathMatch:"full", redirectTo: "login",
